@@ -8,8 +8,22 @@
 </head>
 
 <body>
-    <h1> Great Its a <%= whichDay%>
+    <h1>
+        <%= whichDay%> List
     </h1>
+    <ul>
+        <% for(let i=0;i< itemList.length;i++){ %>
+            <li>
+                <%=itemList[i]%>
+            </li>
+            <% } %>
+    </ul>
+
+
+    <form action="/" method="post">
+        <input type="text" name="item" placeholder="Item to add">
+        <button type="submit" name="submit">Add</button>
+    </form>
 
 </body>
 
