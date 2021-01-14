@@ -5,25 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <h1>
-        <%= whichDay%> List
-    </h1>
-    <ul>
+    <div class="box" id="heading">
+        <h1>
+            <%= whichDay%> List
+        </h1>
+    </div>
+    <div class="box">
+
         <% for(let i=0;i< itemList.length;i++){ %>
-            <li>
-                <%=itemList[i]%>
-            </li>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%=itemList[i]%>
+                </p>
+            </div>
+
+
             <% } %>
-    </ul>
+                <form class="item" action="/" method="post">
+                    <input type="text" name="item" placeholder="Item to add" autocomplete="off">
+                    <button type="submit" name="submit">+</button>
+                </form>
+    </div>
 
 
-    <form action="/" method="post">
-        <input type="text" name="item" placeholder="Item to add">
-        <button type="submit" name="submit">Add</button>
-    </form>
+
+
 
 </body>
 
